@@ -90,3 +90,10 @@ function collegeMapKey($api){
 }
 
 add_filter('acf/fields/google_map/api', 'collegeMapKey');
+
+function ignoreCertainFiles ($exclude_filters){
+	$exclude_filters[]= 'themes/GallawayCollegeTheme/node_module';
+	return $exclude_filters;
+}
+
+add_filter('ai1wm_exclude_content_from_export', 'ignoreCertainFiles');
